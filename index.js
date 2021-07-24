@@ -328,12 +328,12 @@ bot.on("message",(message) =>{
                 },
                 {
                     name: 'Game history of summoner',
-                    value: prefix+'history [summoner name] [number of games (default 5)]',
+                    value: prefix+'history [summoner name(type "-" for space)] [number of games (default 5)]',
                     inline: true,
                 },
                 {
                     name: 'Champions statistics of summoner',
-                    value: prefix+'stat [summoner name] [number of champions (default 5)]',
+                    value: prefix+'stat [summoner name(type "-" for space)] [number of champions (default 5)]',
                     inline: true,
                 },
                 {
@@ -364,8 +364,10 @@ bot.on("message",(message) =>{
            return message.channel.send("Not valid command , try "+prefix +"help for know about the command");
         }
         try{
+	    args[0].replace("-"," ");
             renderHistory(args,message)
         }
+
         catch(error){
             message.channel.send("Not valid command , try "+prefix +"help for know about the command");
         }
@@ -388,6 +390,7 @@ bot.on("message",(message) =>{
            return message.channel.send("Not valid command , try "+prefix +"help for know about the command");
         }
         try{
+	    args[0].replace("-"," ");
             about(args,message)
         }
         catch(error){
