@@ -16,7 +16,7 @@ let fetchLol = async (tableau, name) =>
     let fetched = await fetch(requete);
     json = await fetched.json();
     await tableau.push(json);
-    console.log(requete);
+    //console.log(tableau);
 }  
 let fetchLolChamp = async (tableau) =>{
     await tableau.push(champ);
